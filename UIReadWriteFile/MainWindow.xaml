@@ -1,0 +1,618 @@
+﻿<Window x:Class="UIReadWriteFile.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UIReadWriteFile"
+        mc:Ignorable="d"
+        xmlns:dragablz="clr-namespace:Dragablz;assembly=Dragablz"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextElement.FontStretch="UltraCondensed"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Foreground="White"
+        WindowStyle="None"
+        Height="600"
+        Width="1000"
+        fw:AcrylicWindow.Enabled="True"
+        fw:AcrylicWindow.AcrylicWindowStyle="None"
+        fw:AcrylicWindow.FallbackColor="White"
+        fw:AcrylicWindow.TintColor="White"
+        Icon="SORTICON.ico">
+    <Window.Resources>
+        <ResourceDictionary Source="ColorGradientVTT.xaml"></ResourceDictionary>
+    </Window.Resources>
+    <Grid Background="{StaticResource GradientVTTO30}">
+        <Grid Height="79"
+              VerticalAlignment="Top"
+              MouseDown="Grid_MouseDown"
+              Background="{StaticResource GradientVTT}">
+            <TextBlock Text="DH19PM"
+                       Foreground="White"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="top"
+                       FontSize="30"
+                       FontFamily="Calibri"
+                       Margin="0 12"></TextBlock>
+            <Button HorizontalAlignment="Right"
+                    Background="{x:Null}"
+                    BorderBrush="{x:Null}"
+                    Click="Button_Click"
+                    Height="42"
+                    Width="42"
+                    Margin="0 -12 10 0"
+                    Padding="0">
+                <materialDesign:PackIcon Kind="Power"
+                                         Width="42"
+                                         Height="42"
+                                         HorizontalAlignment="Center"
+                                         VerticalAlignment="Center"></materialDesign:PackIcon>
+            </Button>
+
+        </Grid>
+
+        <Grid Margin="0,39,0,0"
+              x:Name="bodyView"
+              fw:PointerTracker.Enabled="True">
+            <dragablz:TabablzControl Foreground="{x:Null}"
+                                     BorderBrush="{x:Null}">
+                <dragablz:TabablzControl.InterTabController>
+                    <dragablz:InterTabController />
+                </dragablz:TabablzControl.InterTabController>
+                <!--HOME-->
+                <TabItem Header="HOME"
+                         IsSelected="True">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid>
+                            <materialDesign:Card Width="200"
+                                                 Height="350"
+                                                 Background="#7FFFFFFF"
+                                                 UniformCornerRadius="10">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="200" />
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Image Source="8d98d61498267f782637.jpg" />
+                                    <Button Grid.Row="0"
+                                            x:Name="btn_fbThuan"
+                                            Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+                                            HorizontalAlignment="Right"
+                                            VerticalAlignment="Bottom"
+                                            Margin="0 0 16 -20"
+                                            Background="#FF405DFB"
+                                            BorderBrush="#FF405DFB"
+                                            Click="btn_fbThuan_Click">
+                                        <materialDesign:PackIcon Kind="Facebook" />
+                                    </Button>
+                                    <StackPanel Grid.Row="1"
+                                                Margin="8 24 8 0"
+                                                VerticalAlignment="Top">
+                                        <TextBlock FontWeight="Bold"
+                                                   Text="Võ Thành Thuận"
+                                                   TextAlignment="Center"
+                                                   Foreground="#FF9B17BA">
+
+                                        </TextBlock>
+                                        <TextBlock TextWrapping="Wrap"
+                                                   VerticalAlignment="Center"
+                                                   Foreground="#FF9B17BA">
+                                                     <Underline>Class:</Underline> DH19PM <LineBreak /> 
+                                                     <Underline>MSSV:</Underline> DPM185194 <LineBreak /> 
+                                                     <Underline>RELATIONSHIP:</Underline> Alone <LineBreak />
+                                                     <Underline>Language:</Underline> C#, JAVA, JavaScrip <LineBreak />
+                                        </TextBlock>
+                                    </StackPanel>
+                                </Grid>
+                            </materialDesign:Card>
+                        </Grid>
+                        <Grid Grid.Column="1">
+                            <materialDesign:Card Width="200"
+                                                 Height="350"
+                                                 Background="#7FFFFFFF"
+                                                 UniformCornerRadius="10">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="200" />
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Image Source="Son.jpg"
+                                           Height="200"
+                                           Width="196"
+                                           Stretch="UniformToFill" />
+                                    <Button Grid.Row="0"
+                                            x:Name="btn_fbSon"
+                                            Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+                                            HorizontalAlignment="Right"
+                                            VerticalAlignment="Bottom"
+                                            Margin="0 0 16 -20"
+                                            Background="#FF405DFB"
+                                            BorderBrush="#FF405DFB"
+                                            Click="btn_fbSon_Click">
+                                        <materialDesign:PackIcon Kind="Facebook" />
+                                    </Button>
+                                    <StackPanel Grid.Row="1"
+                                                Margin="8 24 8 0">
+                                        <TextBlock FontWeight="Bold"
+                                                   Text="Nguyễn Ngọc Sơn"
+                                                   TextAlignment="Center"
+                                                   Foreground="#FF8F57DD">
+
+                                        </TextBlock>
+                                        <TextBlock TextWrapping="Wrap"
+                                                   VerticalAlignment="Center"
+                                                   Foreground="#FF8F57DD">
+                                                    <Underline>Class:</Underline>  DH19PM <LineBreak /> 
+                                                    <Underline>MSSV:</Underline> DPM185190 <LineBreak /> 
+                                                    <Underline>RELATIONSHIP:</Underline> Đã có bạn gái lúc nghỉ dịch <LineBreak />
+                                                    <Underline>Language:</Underline> C#, JavaScrip, HTML5, CSS, SASS <LineBreak />
+                                        </TextBlock>
+                                    </StackPanel>
+                                </Grid>
+                            </materialDesign:Card>
+                        </Grid>
+                        <Grid Grid.Column="2"
+                              Opacity="1">
+                            <materialDesign:Card Width="200"
+                                                 Height="350"
+                                                 Background="#7FFFFFFF"
+                                                 UniformCornerRadius="10">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="200" />
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Image Source="Toan.png"
+                                           Height="200"
+                                           Width="196"
+                                           Stretch="UniformToFill" />
+                                    <Button Grid.Row="0"
+                                            x:Name="btn_fbToan"
+                                            Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+                                            HorizontalAlignment="Right"
+                                            VerticalAlignment="Bottom"
+                                            Margin="0 0 16 -20"
+                                            Background="#FF405DFB"
+                                            BorderBrush="#FF405DFB"
+                                            Click="btn_fbToan_Click">
+                                        <materialDesign:PackIcon Kind="Facebook" />
+                                    </Button>
+                                    <StackPanel Grid.Row="1"
+                                                Margin="8 24 8 0">
+                                        <TextBlock FontWeight="Bold"
+                                                   Text="Nguyễn Thanh Toàn"
+                                                   TextAlignment="Center"
+                                                   Foreground="#FF00A2D4">
+                                        </TextBlock>
+                                        <TextBlock TextWrapping="Wrap"
+                                                   VerticalAlignment="Center"
+                                                   Foreground="#FF00A2D4">
+                                                    <Underline>Class:</Underline>  DH19PM <LineBreak /> 
+                                                    <Underline>MSSV:</Underline>  DPM185203 <LineBreak /> 
+                                                    <Underline>RELATIONSHIP:</Underline> Alone <LineBreak />
+                                                    <Underline>Language:</Underline>  ... <LineBreak />
+                                        </TextBlock>
+                                    </StackPanel>
+                                </Grid>
+                            </materialDesign:Card>
+                        </Grid>
+
+                    </Grid>
+                </TabItem>
+                <!--Sắp xếp RUN-->
+                <TabItem x:Name="tabSortRun"
+                         Header="SORT RUN"
+                         MouseEnter="tabSortRun_MouseEnter">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"></RowDefinition>
+                            <RowDefinition Height="1.2*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <StackPanel Grid.Row="0">
+                            <TextBox x:Name="TboxInputNumberRUN"
+                                     Style="{StaticResource MaterialDesignFilledTextFieldTextBox}"
+                                     VerticalAlignment="Top"
+                                     TextWrapping="NoWrap"
+                                     materialDesign:HintAssist.Hint="Nhập dữ liệu"
+                                     PreviewTextInput="TboxInputNumber_PreviewTextInput"
+                                     IsEnabled="True"
+                                     Foreground="Black"
+                                     FontSize="14"/>
+
+                            <Grid Height="Auto">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <!--Button-->
+                                <Button x:Name="btRandomRUN"
+                                        Style="{StaticResource MaterialDesignFlatButton}"
+                                        Height="60"
+                                        ToolTip="Tao ngẫu nhiên một số"
+                                        Grid.Column="0"
+                                        Click="randomRUN_Click"
+                                        Background="#33FFFFFF"
+                                        Foreground="#FF9B17BA"
+                                        materialDesign:ButtonAssist.CornerRadius="0"
+                                        FontSize="18">
+                                    Random
+                                </Button>
+                                <Button x:Name="btChooseFile"
+                                        Style="{StaticResource MaterialDesignFlatButton}"
+                                        Height="60"
+                                        ToolTip="mở một file chứa dữ liệu sẵn"
+                                        Grid.Column="1"
+                                        Click="btChooseFile_Click"
+                                        Background="#33FFFFFF"
+                                        Foreground="#FF7346B1"
+                                        materialDesign:ButtonAssist.CornerRadius="0"
+                                        FontSize="18">
+                                    Nhập File
+                                </Button>
+                                <Button x:Name="btSortRun"
+                                        Style="{StaticResource MaterialDesignFlatButton}"
+                                        Height="60"
+                                        ToolTip="Thực hiện sắp xếp với giải thuật RUN"
+                                        Grid.Column="2"
+                                        Content="Sort Run"
+                                        Click="btSortRun_Click"
+                                        Background="#33FFFFFF"
+                                        Foreground="#FF00779C"
+                                        materialDesign:ButtonAssist.CornerRadius="0"
+                                        FontSize="18">
+                                </Button>
+                            </Grid>
+
+                            <TextBox x:Name="TboxResultRUN"
+                                     Style="{StaticResource MaterialDesignFilledTextFieldTextBox}"
+                                     VerticalAlignment="Top"
+                                     Height="Auto"
+                                     TextWrapping="NoWrap"
+                                     VerticalScrollBarVisibility="Auto"
+                                     materialDesign:HintAssist.Hint="Kết quả"
+                                     IsReadOnly="True"
+                                     Margin="0 0 0 0"
+                                     Text=""
+                                     Foreground="Black"
+                                     FontSize="14"/>
+
+                        </StackPanel>
+                        <Grid Grid.Row="1">
+                            <Grid Width="Auto"
+                                  Height="40"
+                                  Background="{StaticResource GradientVTT}"
+                                  VerticalAlignment="Top">
+                                <TextBlock VerticalAlignment="Center"
+                                           Foreground="White"
+                                           FontSize="16"
+                                           Margin="16,0,0,0"
+                                           Background="{StaticResource GradientVTT}">Quy Trình Sort RUN</TextBlock>
+                            </Grid>
+                            <ScrollViewer VerticalScrollBarVisibility="Auto"
+                                          HorizontalScrollBarVisibility="Auto"
+                                          Margin="0 40 0 0"
+                                          VerticalAlignment="Top"
+                                          Background="#7FFFFFFF">
+                                <StackPanel x:Name="spSorStepRUN">
+                                </StackPanel>
+                            </ScrollViewer>
+                        </Grid>
+                    </Grid>
+                </TabItem>
+                <!--Sort natural-->
+                <TabItem x:Name="tabSortNatural"
+                         Header="SORT NATURAL"
+                         MouseEnter="tabSortNatural_MouseEnter">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"></RowDefinition>
+                            <RowDefinition Height="1.2*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <StackPanel Grid.Row="0">
+                            <TextBox x:Name="TboxInputNumberNatural"
+                                     Style="{StaticResource MaterialDesignFilledTextFieldTextBox}"
+                                     VerticalAlignment="Top"
+                                     TextWrapping="NoWrap"
+                                     materialDesign:HintAssist.Hint="Nhập dữ liệu"
+                                     IsEnabled="True"
+                                     PreviewTextInput="TboxInputNumber_PreviewTextInput"
+                                     Foreground="Black"
+                                     FontSize="14" />
+
+                            <Grid Height="Auto">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <!--button-->
+                                <Button x:Name="btRandomNatural"
+                                        Style="{StaticResource MaterialDesignFlatButton}"
+                                        Height="60"
+                                        ToolTip="Tao ngẫu nhiên một số"
+                                        Grid.Column="0"
+                                        Click="btRandomNatural_Click"
+                                        Background="#33FFFFFF"
+                                        Foreground="#FF9B17BA"
+                                        materialDesign:ButtonAssist.CornerRadius="0"
+                                        FontSize="18">
+                                    Random
+                                </Button>
+                                <Button Style="{StaticResource MaterialDesignFlatButton}"
+                                        Height="60"
+                                        ToolTip="mở một file chứa dữ liệu sẵn"
+                                        Grid.Column="1"
+                                        Click="btChooseFile_Click"
+                                        Background="#33FFFFFF"
+                                        Foreground="#FF8F57DD"
+                                        materialDesign:ButtonAssist.CornerRadius="0"
+                                        FontSize="18">
+                                    Nhập File
+                                </Button>
+                                <Button x:Name="btSortNatural"
+                                        Style="{StaticResource MaterialDesignFlatButton}"
+                                        Height="60"
+                                        ToolTip="Thực hiện sắp xếp với giải thuật Natural"
+                                        Grid.Column="2"
+                                        Content="Sort Natural"
+                                        Click="btSortNatural_Click"
+                                        Background="#33FFFFFF"
+                                        Foreground="#FF00A2D4"
+                                        materialDesign:ButtonAssist.CornerRadius="0"
+                                        FontSize="18">
+                                </Button>
+                            </Grid>
+
+                            <TextBox x:Name="TboxResultNatural"
+                                     Style="{StaticResource MaterialDesignFilledTextFieldTextBox}"
+                                     VerticalAlignment="Top"
+                                     Height="Auto"
+                                     TextWrapping="NoWrap"
+                                     VerticalScrollBarVisibility="Auto"
+                                     materialDesign:HintAssist.Hint="Kết quả"
+                                     IsReadOnly="True"
+                                     Margin="0 0 0 0"
+                                     Foreground="Black"
+                                     FontSize="14" />
+                        </StackPanel>
+                        <Grid Grid.Row="1">
+                            <Grid Width="Auto"
+                                  Height="40"
+                                  Background="{StaticResource GradientVTT}"
+                                  VerticalAlignment="Top">
+                                <TextBlock Text="Quy Trình Sort Natural"
+                                           VerticalAlignment="Center"
+                                           Foreground="White"
+                                           FontSize="16"
+                                           Margin="16,0,0,0"></TextBlock>
+                            </Grid>
+                            <ScrollViewer VerticalScrollBarVisibility="Auto"
+                                          HorizontalScrollBarVisibility="Auto"
+                                          Margin="0 40 0 0"
+                                          VerticalAlignment="Top"
+                                          Background="#7FFFFFFF">
+                                <StackPanel x:Name="spSorStepNatural">
+                                </StackPanel>
+                            </ScrollViewer>
+                        </Grid>
+                    </Grid>
+                </TabItem>
+                <!--Sắp xếp đa lối căn bằng-->
+                <TabItem x:Name="tabSortBalanced"
+                         Header="SORT BALANCED"
+                         MouseEnter="tabSortBalanced_MouseEnter"
+                         Loaded="tabSortBalanced_Loaded">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition  Height="1*"></RowDefinition>
+                            <RowDefinition Height="1.2*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <StackPanel Grid.Row="0">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="10*"></ColumnDefinition>
+                                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <TextBox x:Name="TboxInputNumberBalance"
+                                         Grid.Column="0"
+                                         Style="{StaticResource MaterialDesignFilledTextFieldTextBox}"
+                                         materialDesign:HintAssist.Hint="Nhập dữ liệu"
+                                         IsEnabled="True"
+                                         Margin="0 0 0 0"
+                                         PreviewTextInput="TboxInputNumber_PreviewTextInput"
+                                         TextWrapping="NoWrap"
+                                         Foreground="Black"
+                                         FontSize="14" />
+
+                                <ComboBox Style="{StaticResource MaterialDesignFilledComboBox}"
+                                          x:Name="cbboxNumberFile"
+                                          materialDesign:HintAssist.Hint="Number"
+                                          Grid.Column="1"
+                                          SelectedIndex="0"
+                                          Foreground="#FF03799D">
+                                </ComboBox>
+                            </Grid>
+
+                            <Grid Height="Auto">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <!--Button-->
+                                <Button x:Name="btRandomBalance"
+                                        Style="{StaticResource MaterialDesignFlatButton}"
+                                        Height="60"
+                                        ToolTip="Tao ngẫu nhiên một số"
+                                        Grid.Column="0"
+                                        Click="btRandomBalance_Click"
+                                        Background="#33FFFFFF"
+                                        Foreground="#FF9B17BA"
+                                        materialDesign:ButtonAssist.CornerRadius="0"
+                                        FontSize="18">
+                                    Random
+                                </Button>
+                                <Button Style="{StaticResource MaterialDesignFlatButton}"
+                                        Height="60"
+                                        ToolTip="mở một file chứa dữ liệu sẵn"
+                                        Grid.Column="1"
+                                        Click="btChooseFile_Click"
+                                        Background="#33FFFFFF"
+                                        Foreground="#FF8F57DD"
+                                        materialDesign:ButtonAssist.CornerRadius="0"
+                                        FontSize="18">
+                                    Nhập File
+                                </Button>
+                                <Button x:Name="btSortBalance"
+                                        Style="{StaticResource MaterialDesignFlatButton}"
+                                        Height="60"
+                                        ToolTip="Thực hiện sắp xếp với giải thuật Balanced"
+                                        Grid.Column="2"
+                                        Content="Sort Balance"
+                                        Click="btSortBalance_Click"
+                                        Background="#33FFFFFF"
+                                        Foreground="#FF00A2D4"
+                                        materialDesign:ButtonAssist.CornerRadius="0"
+                                        FontSize="18">
+                                </Button>
+
+                            </Grid>
+
+                            <TextBox x:Name="TboxResultBalance"
+                                     Style="{StaticResource MaterialDesignFilledTextFieldTextBox}"
+                                     VerticalAlignment="Top"
+                                     Height="Auto"
+                                     TextWrapping="NoWrap"
+                                     VerticalScrollBarVisibility="Auto"
+                                     materialDesign:HintAssist.Hint="Kết quả"
+                                     IsReadOnly="True"
+                                     Margin="0 0 0 0"
+                                     Foreground="Black"
+                                     FontSize="14" />
+                        </StackPanel>
+                        <Grid Grid.Row="1">
+                            <Grid Width="Auto"
+                                  Height="40"
+                                  Background="{StaticResource GradientVTT}"
+                                  VerticalAlignment="Top">
+                                <TextBlock Text="Quy Trình Sort Balanced"
+                                           VerticalAlignment="Center"
+                                           Foreground="White"
+                                           FontSize="16"
+                                           Margin="16,0,0,0"></TextBlock>
+                            </Grid>
+                            <ScrollViewer VerticalScrollBarVisibility="Auto"
+                                          HorizontalScrollBarVisibility="Auto"
+                                          Margin="0 40 0 0"
+                                          VerticalAlignment="Top"
+                                          Background="#7FFFFFFF">
+                                <StackPanel x:Name="spSorStepBalance">
+                                </StackPanel>
+                            </ScrollViewer>
+                        </Grid>
+                    </Grid>
+                </TabItem>
+                <!--...-->
+                <TabItem>
+                    <TabItem.Header>
+                        <materialDesign:PackIcon Kind="Tools"
+                                                 Foreground="White"
+                                                 Height="18"
+                                                 Width="18" />
+                    </TabItem.Header>
+                    <Grid>
+                        <Grid Margin="0 40 0 0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Button x:Name="btReadFileTool"
+                                    Style="{StaticResource MaterialDesignFloatingActionButton}"
+                                    materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
+                                    materialDesign:ButtonProgressAssist.Value="-1"
+                                    materialDesign:ButtonProgressAssist.IsIndeterminate="True"
+                                    Content="Đọc"
+                                    Width="240"
+                                    Height="240"
+                                    Click="btReadFileTool_Click"
+                                    FontSize="30">
+                                <Button.Background>
+                                    <LinearGradientBrush EndPoint="0.5,1"
+                                                         StartPoint="0.5,0">
+                                        <LinearGradientBrush.RelativeTransform>
+                                            <TransformGroup>
+                                                <ScaleTransform CenterY="0.5"
+                                                                CenterX="0.5" />
+                                                <SkewTransform CenterY="0.5"
+                                                               CenterX="0.5" />
+                                                <RotateTransform Angle="90"
+                                                                 CenterY="0.5"
+                                                                 CenterX="0.5" />
+                                                <TranslateTransform />
+                                            </TransformGroup>
+                                        </LinearGradientBrush.RelativeTransform>
+                                        <GradientStop Color="#FFB749FF"
+                                                      Offset="0" />
+                                        <GradientStop Color="#FFD81CFF"
+                                                      Offset="1" />
+                                    </LinearGradientBrush>
+                                </Button.Background>
+                            </Button>
+                            <Button x:Name="btWriteFileTool"
+                                    Grid.Column="1"
+                                    Style="{StaticResource MaterialDesignFloatingActionButton}"
+                                    materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
+                                    materialDesign:ButtonProgressAssist.Value="-1"
+                                    materialDesign:ButtonProgressAssist.IsIndeterminate="True"
+                                    Content="Ghi"
+                                    Width="240"
+                                    Height="240"
+                                    Click="btWriteFileTool_Click"
+                                    FontSize="30"
+                                    VerticalAlignment="Center"
+                                    HorizontalAlignment="Center">
+                                <Button.Background>
+                                    <LinearGradientBrush EndPoint="0.5,1"
+                                                         StartPoint="0.5,0">
+                                        <LinearGradientBrush.RelativeTransform>
+                                            <TransformGroup>
+                                                <ScaleTransform CenterY="0.5"
+                                                                CenterX="0.5" />
+                                                <SkewTransform CenterY="0.5"
+                                                               CenterX="0.5" />
+                                                <RotateTransform Angle="90"
+                                                                 CenterY="0.5"
+                                                                 CenterX="0.5" />
+                                                <TranslateTransform />
+                                            </TransformGroup>
+                                        </LinearGradientBrush.RelativeTransform>
+                                        <GradientStop Color="#FF71ADFF"
+                                                      Offset="0" />
+                                        <GradientStop Color="#FF9082FF"
+                                                      Offset="1" />
+                                    </LinearGradientBrush>
+                                </Button.Background>
+                            </Button>
+                        </Grid>
+                    </Grid>
+                </TabItem>
+            </dragablz:TabablzControl>
+        </Grid>
+
+    </Grid>
+
+</Window>

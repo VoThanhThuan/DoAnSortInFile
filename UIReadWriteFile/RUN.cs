@@ -26,12 +26,13 @@ namespace UIReadWriteFile
                 BinaryWriter bw_1 = new BinaryWriter(new FileStream("Sort/RUN_f1.DH19PM", FileMode.Create, FileAccess.Write));
                 BinaryWriter bw_2 = new BinaryWriter(new FileStream("Sort/RUN_f2.DH19PM", FileMode.Create, FileAccess.Write));
                 //đọc dữ liệu
-                int dem = 0;
+                int dem;
                 int stop = 0;
                 int num = 0;
                 //61 47 33 38 62 48 18 20 25 
                 while (stop < max_m)
                 {
+                    //Ghi vào F1
                     dem = 0;
                     while (stop < max_m && dem < m)
                     {
@@ -39,6 +40,7 @@ namespace UIReadWriteFile
                         bw_1.Write(num);
                         ++dem; ++stop;
                     }
+                    //Ghi vào F2
                     dem = 0;
                     while (stop < max_m && dem < m)
                     {
@@ -79,30 +81,30 @@ namespace UIReadWriteFile
                 BinaryReader br_1 = new BinaryReader(new FileStream("Sort/RUN_f1.DH19PM", FileMode.Open, FileAccess.Read));
                 BinaryReader br_2 = new BinaryReader(new FileStream("Sort/RUN_f2.DH19PM", FileMode.Open, FileAccess.Read));
                 BinaryWriter bw = new BinaryWriter(new FileStream(pathOut, FileMode.Create, FileAccess.Write));
-                int stop = 0, l = 0, r = 0, num_L = -1, num_R = -1;
+                int stop = 0, let = 0, right = 0, num_L = -1, num_R = -1;
                 bool check = false;
                 //đọc dữ liệu từ 2 file 
                 num_L = br_1.ReadInt32();
                 num_R = br_2.ReadInt32();
                 while (stop < max_m)
                 {
-                    l = 0; r = 0;
-                    while ((l < m && r < m) && (br_1.BaseStream.Position <= br_1.BaseStream.Length) && (br_2.BaseStream.Position <= br_2.BaseStream.Length))
+                    let = 0; right = 0;
+                    while ((let < m && right < m) && (br_1.BaseStream.Position <= br_1.BaseStream.Length) && (br_2.BaseStream.Position <= br_2.BaseStream.Length))
                     {
-                        if (Sort(num_L, num_R) < 0)
+                        if (Sort(num_L, num_R) < 0) // nếu num_L nhỏ hơn num_R thì ghi L vào trước
                         {
-                            l++; stop++;
+                            let++; stop++;
                             bw.Write(num_L);
-                            if (br_1.BaseStream.Position != br_1.BaseStream.Length)
+                            if (br_1.BaseStream.Position != br_1.BaseStream.Length) // kiểm tra hết dữ liệu chưa
                                 num_L = br_1.ReadInt32();
                             else
                                 break;
                         }
-                        else
+                        else //ngược lại ghi R vào trước
                         {
-                            r++; stop++;
+                            right++; stop++;
                             bw.Write(num_R);
-                            if (br_2.BaseStream.Position != br_2.BaseStream.Length)
+                            if (br_2.BaseStream.Position != br_2.BaseStream.Length) // kiểm tra hết dữ liệu chưa
                                 num_R = br_2.ReadInt32();
                             else
                             {
@@ -112,17 +114,17 @@ namespace UIReadWriteFile
                         }
                     }
                     //copy những số không sắp xếp
-                    while (l < m && stop < max_m )
+                    while (let < m && stop < max_m )
                     {
                         bw.Write(num_L);
-                        l++; stop++;
+                        let++; stop++;
                         if (br_1.BaseStream.Position != br_1.BaseStream.Length)
                             num_L = br_1.ReadInt32();
                     }
-                    while (r < m && stop < max_m )
+                    while (right < m && stop < max_m )
                     {
                         bw.Write(num_R);
-                        r++; stop++;
+                        right++; stop++;
                         if (br_2.BaseStream.Position != br_2.BaseStream.Length)
                             num_R = br_2.ReadInt32();
                         else

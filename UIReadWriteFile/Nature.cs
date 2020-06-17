@@ -57,7 +57,7 @@ namespace UIReadWriteFile
                     //vòng lặp ghi vào f1
                     while (stop < max_m && lever == true)
                     {
-                        ++stop; ++p1; //p1: số lượng các số tăng tự nhiên VD: 1 2 9 8 thì p1 = 3
+                        ++stop; ++p1; //p1: số lượng các số tăng tự nhiên VD: 1 2 9  8 thì p1 = 3
                         //kiểm tra số có tăng tự nhiên hay không (số tăng tự nhiên là số trước nhỏ hơn số sau)
                         if (num_1 <= num_2)
                         {
@@ -149,14 +149,14 @@ namespace UIReadWriteFile
                 num_f2 = br_2.ReadInt32();
 
                 //so sánh rồi đưa vào file f0
-                while (br_position.BaseStream.Position != br_position.BaseStream.Length)
+                while (br_position.BaseStream.Position != br_position.BaseStream.Length)//kt ? cuối mảng
                 {
                     //đọc vị trí nhóm các số tăng tự nhiên đã gom
                     p1 = br_position.ReadInt32();
                     p2 = br_position.ReadInt32();
                     ++stop;
-                    CurrentPosition_1 = 0; CurrentPosition_2 = 0;
-                    while (CurrentPosition_1 < p1 && CurrentPosition_2 < p2)
+                    CurrentPosition_1 = 0; CurrentPosition_2 = 0; // vị trí hiện tại
+                    while (CurrentPosition_1 < p1 && CurrentPosition_2 < p2)  //p = số lượng phần tử đã chia nhóm
                     {
                         if (num_f1 < num_f2)
                         {
